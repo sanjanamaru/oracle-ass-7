@@ -1,0 +1,15 @@
+set serveroutput on
+declare
+	a number;
+	b number;
+begin
+	a:=&a;
+	b:=&b;
+	dbms_output.put_line('addition'||(a+b));
+	dbms_output.put_line('subtraction'||(a-b));
+	dbms_output.put_line('multiplication'||(a*b));
+	dbms_output.put_line('division'||(a/b));
+end;
+/
+	
+	

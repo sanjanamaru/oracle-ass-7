@@ -1,0 +1,19 @@
+set serveroutput on
+declare
+emp_name varchar2(100):='john';
+emp_address varchar2(100):='mumbai';
+salary number:=12000;
+begin
+if emp_name is null then
+dbms_output.put_line('employee name cannot be null');
+elsif emp_address not in('mumbai','delhi','pune','ahmedabad')then
+dbms_output.put_line('city must be mubai,delhi,pune or ahmedabad');
+elsif salary<5000 or salary>15000 then
+dbms_output.put_line('salary must be between 5000 and 15000');
+else
+insert into emp(name,address,salary)
+values(emp_name,emp_address,salary);
+dbms_output.put_line('record saved successfully');
+end if;
+end;
+/

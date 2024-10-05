@@ -1,0 +1,15 @@
+set serveroutput on
+declare
+	eno emp.emp_no%type;
+	ename emp.name%type;
+	add emp.address%type;
+begin
+	eno:=&emp_no;
+	ename:='&name';
+	add:='&address';
+		insert into emp(emp_no,name,address)
+		values(eno,ename,add);
+	commit;
+		dbms_output.put_line('record successfully entered');
+end;
+/

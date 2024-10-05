@@ -1,0 +1,15 @@
+set serveroutput on
+declare
+row_num number;
+col_num number;
+result_num number;
+begin
+for row_num in 1..10loop
+for col_num in 1..10loop
+result_num:=row_num*col_num;
+dbms_output.put(result_num||chr(9));
+end loop;
+dbms_output.put_line('');
+end loop;
+end;
+/
